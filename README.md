@@ -201,6 +201,45 @@ src
 ├── config
 ├── exception
 └── util
+```
+
+---
+
+# 🗄 Database Schema
+
+```text
+User
+
+id
+name
+email
+password
+role
+
+Resume
+
+id
+resumeText
+userId
+
+AnalysisReport
+
+id
+atsScore
+missingKeywords
+strengths
+suggestions
+
+Interview
+
+id
+question
+answer
+feedback
+score
+```
+
+---
 
 # 🔗 REST APIs
 
@@ -211,19 +250,15 @@ src
 | POST | /resume/match | Resume Analysis |
 | POST | /mock-interview/evaluate | Interview Evaluation |
 
+---
+
 # ⚙ Installation
 
-bash
+```bash
 git clone https://github.com/LUVKUMAR01/hirewiseai-backend.git
 
 cd hirewiseai-backend
-
-🚀 How to Run Locally
-
-Clone repo git clone https://github.com/your-username/your-repo.git
-Configure DB spring.datasource.url=jdbc:mysql://localhost:3306/your_db spring.datasource.username=root spring.datasource.password=your_password
-Run project mvn spring-boot:run
-
+```
 
 Configure
 
@@ -243,6 +278,7 @@ mvn spring-boot:run
 ```
 
 ---
+
 
 # 📤 Sample Request
 
@@ -311,7 +347,6 @@ Java Backend Developer
 
 GitHub: https://github.com/LUVKUMAR01
 
-LinkedIn: *(Add your profile link)*
 
 ---
 
