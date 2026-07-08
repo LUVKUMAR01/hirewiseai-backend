@@ -1,78 +1,315 @@
-hirewise-ai-backend
+🚀 HireWise AI - Resume ATS & Mock Interview System
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-green)
+![Spring Security](https://img.shields.io/badge/Spring_Security-JWT-blue)
+![Database](https://img.shields.io/badge/Database-MySQL-blue)
+![AI](https://img.shields.io/badge/AI-Gemini-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 AI-powered Resume ATS + Mock Interview System using Spring Boot and Gemini AI with JWT authentication, Swagger API documentation, and RESTful backend architecture.
 
-🚀 AI Resume ATS & Mock Interview System
+An **AI-powered Resume ATS & Mock Interview System** built using **Spring Boot**, **Spring Security**, **JWT Authentication**, **Spring Data JPA**, **MySQL**, and **Google Gemini AI**.
 
-An AI-powered backend system that evaluates resumes against job descriptions and generates interview questions with AI-based scoring and feedback using Google Gemini AI.
+The application automates resume evaluation, compares resumes against job descriptions, identifies missing skills, generates ATS scores, creates AI-powered interview questions, and provides personalized improvement suggestions.
 
-🔥 Features 📄 Resume vs Job Description Matching 🤖 AI-powered skill gap analysis (Gemini AI) 🎤 Mock interview question generation 📊 Answer evaluation with score (0–10 / 100) 🔐 JWT Authentication system 📚 Swagger API documentation 🧠 AI-based resume improvement suggestions 💾 Database integration (MySQL)
 
-🧠 Tech Stack Java 17 Spring Boot Spring Security (JWT) Spring Data JPA MySQL Gemini AI API Swagger / OpenAPI Maven
+he application automates resume evaluation, compares resumes against job descriptions, identifies missing skills, generates ATS scores, creates AI-powered interview questions, and provides personalized improvement suggestions.
 
-🏗️ System Architecture User (Postman / Swagger) ↓ Spring Boot REST APIs ↓ Business Logic Layer ↓ Gemini AI API (LLM) ↓ Response Processing ↓ MySQL Database
+---
 
-📌 Main Modules
+# 📑 Table of Contents
 
-1. Authentication Module
-* Register user
-* Login user
-* JWT token generation
-  
-2. Resume ATS Module
-* Resume analysis
-* Job description matching
-* Skill gap detection
-  
-3. Mock Interview Module
-* AI-generated questions
-* Answer evaluation
-* Score + feedback
-  
-🔗 API Endpoints Auth APIs POST /auth/register POST /auth/login
+- Overview
+- Features
+- Tech Stack
+- System Architecture
+- Project Flow
+- Folder Structure
+- REST APIs
+- Installation
+- Running the Project
+- Sample Request & Response
+- Key Learnings
+- Future Enhancements
+- Author
 
-Resume APIs POST /resume/match
+---
 
-Interview APIs POST /mock-interview/evaluate
+# 📌 Overview
 
-📚 Swagger API Docs http://localhost:8080/swagger-ui/index.html
+The system can:
+
+- Analyze resumes
+- Compare resumes with Job Descriptions
+- Generate ATS Scores
+- Identify missing keywords
+- Recommend improvements
+- Generate AI-powered interview questions
+- Evaluate interview answers
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- User Registration
+- User Login
+- JWT Authentication
+- Protected REST APIs
+
+---
+
+## Resume ATS
+
+- Resume Analysis
+- Resume vs Job Description Matching
+- ATS Score Generation
+- Missing Keyword Detection
+- AI Skill Extraction
+- Resume Improvement Suggestions
+
+---
+
+## Mock Interview
+
+- AI Question Generation
+- Answer Evaluation
+- Score Generation
+- Feedback Generation
+
+- # 🛠 Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Language | Java 17 |
+| Framework | Spring Boot |
+| Security | Spring Security, JWT |
+| Database | MySQL |
+| ORM | Spring Data JPA |
+| AI | Google Gemini API |
+| Documentation | Swagger/OpenAPI |
+| Build Tool | Maven |
+
+---
+
+# 🏗 System Architecture
+
+```text
+                    User
+           (Swagger / Postman)
+
+                    │
+
+                    ▼
+
+          Spring Boot REST APIs
+
+                    │
+
+      ┌─────────────┼─────────────┐
+
+      ▼             ▼             ▼
+
+Authentication   Resume ATS   Mock Interview
+
+      │             │             │
+
+      └─────────────┼─────────────┘
+
+                    ▼
+
+          Google Gemini AI
+
+                    ▼
+
+          Spring Data JPA
+
+                    ▼
+
+                 MySQL
+```
+
+---
+
+# 🔄 Project Flow
+
+```text
+User Login
+
+     │
+
+     ▼
+
+JWT Authentication
+
+     │
+
+     ▼
+
+Upload Resume
+
+     │
+
+     ▼
+
+Resume Parsing
+
+     │
+
+     ▼
+
+Gemini AI
+
+     │
+
+     ├── ATS Score
+
+     ├── Skill Extraction
+
+     ├── Missing Keywords
+
+     ├── Resume Suggestions
+
+     └── Interview Questions
+
+     │
+
+     ▼
+
+Store Results
+
+     │
+
+     ▼
+
+Return JSON Response
+```
+
+---
+
+# 📂 Folder Structure
+
+```text
+src
+├── controller
+├── service
+├── repository
+├── entity
+├── dto
+├── security
+├── config
+├── exception
+└── util
+
+# 🔗 REST APIs
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | /auth/register | Register User |
+| POST | /auth/login | Login User |
+| POST | /resume/match | Resume Analysis |
+| POST | /mock-interview/evaluate | Interview Evaluation |
+
+# ⚙ Installation
+
+bash
+git clone https://github.com/LUVKUMAR01/hirewiseai-backend.git
+
+cd hirewiseai-backend
 
 🚀 How to Run Locally
 
 Clone repo git clone https://github.com/your-username/your-repo.git
 Configure DB spring.datasource.url=jdbc:mysql://localhost:3306/your_db spring.datasource.username=root spring.datasource.password=your_password
 Run project mvn spring-boot:run
-🧪 Sample Request Resume Match API { "resume": "Java Developer with Spring Boot, MongoDB, REST APIs", "jobDescription": "Looking for Java Developer with Spring Boot, Microservices, AWS, Docker" }
 
-📊 Output Example { "matchPercentage": 75, "missingSkills": "AWS, Docker", "suggestions": "Improve cloud and DevOps skills" }
 
-💡 Key Learnings
+Configure
 
-* AI integration with backend systems
-* REST API design and architecture
-* JWT authentication
-* Prompt engineering with Gemini AI
-* Spring Boot production structure
-  
-🚀 Future Improvements
+```properties
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
 
-* React frontend dashboard
-* Resume PDF upload
-* Deployment on AWS/Render
-* Docker containerization
-* CI/CD pipeline (GitHub Actions)
-  
-📌 Project Status
-✔ Backend Completed
-✔ AI Integration Done
-✔ Swagger Added
-🚀 Deployment Coming Soon
+GEMINI_API_KEY=
+JWT_SECRET=
+```
 
-📄 License
-This project is open-source and available for learning purposes.
+Run
 
-🙏 Thank You
-Thank you for checking out this project.
+```bash
+mvn spring-boot:run
+```
 
-👨‍💻 Author 
-Luv Kumar
+---
+
+# 📤 Sample Request
+
+```json
+{
+  "resume": "...",
+  "jobDescription": "..."
+}
+# 📥 Sample Response
+
+```json
+{
+  "matchPercentage":85,
+  "missingSkills":["Docker","AWS"],
+  "atsScore":82,
+  "suggestions":"Improve cloud skills"
+}
+```
+
+---
+
+# 🔐 Security
+
+- Spring Security
+- JWT Authentication
+- Protected REST APIs
+- Stateless Authentication
+- Role-based Authorization
+
+---
+
+# 📖 Key Learnings
+
+- Spring Boot REST API Design
+- Spring Security + JWT
+- Google Gemini AI Integration
+- Prompt Engineering
+- Database Design using JPA
+- AI-powered Resume Evaluation
+- Production-ready Backend Architecture
+
+---
+
+# 🚀 Future Enhancements
+
+- React Frontend
+- Docker Deployment
+- AWS Deployment
+- CI/CD using GitHub Actions
+- Email Notification
+- Redis Caching
+- Kafka Event Processing
+
+---
+
+# 👨‍💻 Author
+
+**Luv Kumar**
+
+Java Backend Developer
+
+GitHub: https://github.com/LUVKUMAR01
+
+LinkedIn: *(Add your profile link)*
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
