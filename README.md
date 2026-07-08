@@ -246,15 +246,18 @@ mvn spring-boot:run
 
 # 📤 Sample Request
 
-json
+```json
 {
   "resume": "...",
   "jobDescription": "..."
 }
+```
+
+---
 
 # 📥 Sample Response
 
-json
+```json
 {
   "matchPercentage":85,
   "missingSkills":["Docker","AWS"],
@@ -289,6 +292,7 @@ json
 
 # 🚀 Future Enhancements
 
+- Resume PDF Upload
 - React Frontend
 - Docker Deployment
 - AWS Deployment
