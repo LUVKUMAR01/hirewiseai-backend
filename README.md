@@ -205,42 +205,6 @@ src
 
 ---
 
-# 🗄 Database Schema
-
-```text
-User
-
-id
-name
-email
-password
-role
-
-Resume
-
-id
-resumeText
-userId
-
-AnalysisReport
-
-id
-atsScore
-missingKeywords
-strengths
-suggestions
-
-Interview
-
-id
-question
-answer
-feedback
-score
-```
-
----
-
 # 🔗 REST APIs
 
 | Method | Endpoint | Description |
